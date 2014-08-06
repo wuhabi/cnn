@@ -49,13 +49,13 @@ for i = 1:opts.numepochs
             train_err5 = cnntest(arch, modelparas, train_x(:,:,40001:50000), train_y(:,40001:50000));
             train_err6 = cnntest(arch, modelparas, train_x(:,:,50001:60000), train_y(:,50001:60000));
             train_err = (train_err1+train_err2+train_err3+train_err4+train_err5+train_err6)/6;
-            fileID = fopen('./results/result_full_dropout1.txt','a');
+            fileID = fopen('./result1.txt','a');
             fprintf(fileID, '----------------------------------------------------\n');
             fprintf(fileID, 'train error: %f\n',train_err);
             fclose(fileID);
         end
         
-        fileID = fopen('./results/result_full_dropout1.txt','a');
+        fileID = fopen('./result1.txt','a');
         fprintf(fileID, '======================================================\n');
         fprintf(fileID, 'numfilters1: %d\n',arch.numfilters1);
         fprintf(fileID, 'numfilters2: %d\n',arch.numfilters2);
